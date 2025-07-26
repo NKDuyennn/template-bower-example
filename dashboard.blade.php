@@ -12,14 +12,15 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+        
+            <div class="mt-4">
+                <x-input-label for="task" :value="__('Task')" />
+                <x-text-input id="task" name="task" type="text" class="mt-1 block w-full" required autocomplete="task" />
+                <x-input-error :messages="$errors->get('task')" class="mt-2" />
+            </div>
+            <x-primary-button class="mt-4">
+                {{ __('Add Task') }}
+            </x-primary-button>
         </div>
-        <div class="mt-4">
-            <x-input-label for="task" :value="__('Task')" />
-            <x-text-input id="task" name="task" type="text" class="mt-1 block w-full" required autocomplete="task" />
-            <x-input-error :messages="$errors->get('task')" class="mt-2" />
-        </div>
-        <x-primary-button class="mt-4">
-            {{ __('Add Task') }}
-        </x-primary-button>
     </div>
 </x-app-layout>
